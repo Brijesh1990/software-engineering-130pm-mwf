@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jayesh is a software engineering professional with six months of experience building responsive, thoughtful web experiences."
+    />
+    <meta name="theme-color" content="#101014" />
+    <title>Jayesh — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #101014;
+        --paper: #f0eee8;
+        --muted: #a4a2ab;
+        --lime: #c8fa63;
+        --line: rgba(240, 238, 232, 0.13);
+        --mono: "DM Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+        --display: "Space Grotesk", sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: clip;
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+      }
+
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        color: inherit;
+        font: inherit;
+      }
+
+      ::selection {
+        background: var(--lime);
+        color: var(--ink);
+      }
+
+      .page-wrap {
+        width: min(1120px, calc(100% - 64px));
+        margin-inline: auto;
+      }
+
+      .mono {
+        font-family: var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .topbar {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(16, 16, 20, 0.88);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav-shell {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--display);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.06em;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 31px;
+        height: 31px;
+        place-items: center;
+        border-radius: 9px;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 15px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-size: 13px;
+        transition: color 180ms ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--lime);
+      }
+
+      .nav-links .nav-cta {
+        padding: 11px 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--paper);
+      }
+
+      .nav-links .nav-cta:hover,
+      .nav-links .nav-cta:focus-visible {
+        border-color: var(--lime);
+        color: var(--lime);
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: 660px;
+        grid-template-columns: 1.12fr 0.88fr;
+        align-items: center;
+        gap: 36px;
+        overflow: hidden;
+        padding-block: 96px 104px;
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        top: 4%;
+        right: -18%;
+        width: 680px;
+        height: 680px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(128, 112, 218, 0.15),
+          rgba(128, 112, 218, 0) 68%
+        );
+        content: "";
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--lime);
+        box-shadow: 0 0 14px rgba(200, 250, 99, 0.72);
+      }
+
+      .hero h1 {
+        margin: 25px 0 20px;
+        font-family: var(--display);
+        font-size: clamp(54px, 7.5vw, 94px);
+        font-weight: 500;
+        letter-spacing: -0.085em;
+        line-height: 0.99;
+      }
+
+      .hero h1 span {
+        color: var(--lime);
+      }
+
+      .hero-copy {
+        max-width: 480px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 49px;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        transition:
+          transform 180ms ease,
+          background 180ms ease,
+          border-color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: var(--lime);
+        color: var(--ink);
+      }
+
+      .button-primary:hover {
+        background: #d7ff89;
+      }
+
+      .button-quiet {
+        border-color: var(--line);
+        color: var(--paper);
+      }
+
+      .button-quiet:hover {
+        border-color: rgba(240, 238, 232, 0.42);
+      }
+
+      .button-arrow {
+        font-size: 17px;
+        line-height: 1;
+      }
+
+      .hero-art {
+        position: relative;
+        display: grid;
+        min-height: 395px;
+        place-items: center;
+      }
+
+      .art-orbit {
+        position: absolute;
+        width: min(100%, 365px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(240, 238, 232, 0.13);
+        border-radius: 50%;
+      }
+
+      .art-orbit::before,
+      .art-orbit::after {
+        position: absolute;
+        inset: 12%;
+        border: 1px solid rgba(240, 238, 232, 0.1);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .art-orbit::after {
+        inset: 25%;
+        border-color: rgba(200, 250, 99, 0.18);
+      }
+
+      .art-core {
+        position: relative;
+        display: grid;
+        width: 205px;
+        height: 205px;
+        place-items: center;
+        border: 1px solid rgba(200, 250, 99, 0.35);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 36% 28%, rgba(200, 250, 99, 0.2), transparent 40%),
+          linear-gradient(145deg, #24242a, #141418 75%);
+        box-shadow:
+          0 0 100px rgba(200, 250, 99, 0.08),
+          inset 0 0 45px rgba(200, 250, 99, 0.045);
+        color: var(--lime);
+        font-family: var(--display);
+        font-size: 83px;
+        font-weight: 500;
+        letter-spacing: -0.12em;
+        padding-right: 9px;
+      }
+
+      .float-card {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(26, 26, 31, 0.92);
+        box-shadow: 0 12px 38px rgba(0, 0, 0, 0.23);
+      }
+
+      .float-card-one {
+        top: 16%;
+        right: 0;
+      }
+
+      .float-card-two {
+        bottom: 15%;
+        left: 0;
+      }
+
+      .float-icon {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border-radius: 8px;
+        background: rgba(200, 250, 99, 0.1);
+        color: var(--lime);
+        font-size: 15px;
+      }
+
+      .float-card p {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .float-card small {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .section {
+        padding-block: 103px;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 42px;
+      }
+
+      .section-kicker {
+        margin: 0 0 14px;
+        color: var(--lime);
+        font-size: 10px;
+      }
+
+      .section-heading h2,
+      .about-copy h2,
+      .contact-copy h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(36px, 5vw, 58px);
+        font-weight: 500;
+        letter-spacing: -0.07em;
+        line-height: 1.08;
+      }
+
+      .section-heading > p {
+        max-width: 350px;
+        margin: 0 0 4px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .skill-card {
+        min-height: 185px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 75%);
+        transition:
+          border-color 200ms ease,
+          transform 200ms ease,
+          background 200ms ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(200, 250, 99, 0.4);
+        background: linear-gradient(145deg, rgba(200, 250, 99, 0.07), transparent 75%);
+      }
+
+      .skill-icon {
+        display: grid;
+        width: 39px;
+        height: 39px;
+        place-items: center;
+        margin-bottom: 25px;
+        border: 1px solid rgba(200, 250, 99, 0.21);
+        border-radius: 11px;
+        color: var(--lime);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+
+      .skill-card h3 {
+        margin: 0 0 7px;
+        font-family: var(--display);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+      }
+
+      .skill-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 90px;
+        align-items: start;
+      }
+
+      .about-copy h2 {
+        max-width: 400px;
+      }
+
+      .about-copy h2 span {
+        color: var(--lime);
+      }
+
+      .about-text {
+        padding-top: 34px;
+      }
+
+      .about-text p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .about-text p + p {
+        margin-top: 17px;
+      }
+
+      .about-facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 34px;
+        padding-top: 25px;
+        border-top: 1px solid var(--line);
+      }
+
+      .about-facts strong {
+        display: block;
+        color: var(--lime);
+        font-family: var(--display);
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -0.06em;
+      }
+
+      .about-facts span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .approach-card {
+        min-height: 215px;
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: #151519;
+      }
+
+      .approach-number {
+        color: var(--lime);
+        font-size: 10px;
+      }
+
+      .approach-card h3 {
+        margin: 48px 0 10px;
+        font-family: var(--display);
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+      }
+
+      .approach-card p {
+        max-width: 290px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .contact-panel {
+        position: relative;
+        display: flex;
+        min-height: 280px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        overflow: hidden;
+        padding: 55px;
+        border: 1px solid rgba(200, 250, 99, 0.22);
+        border-radius: 19px;
+        background:
+          radial-gradient(ellipse at 93% 11%, rgba(200, 250, 99, 0.12), transparent 34%),
+          linear-gradient(125deg, #1b1b20, #151519 75%);
+      }
+
+      .contact-panel::after {
+        position: absolute;
+        right: 24%;
+        bottom: -220px;
+        width: 320px;
+        height: 320px;
+        border: 1px solid rgba(200, 250, 99, 0.1);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 35px rgba(200, 250, 99, 0.025),
+          0 0 0 70px rgba(200, 250, 99, 0.02);
+        content: "";
+        pointer-events: none;
+      }
+
+      .contact-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-copy h2 {
+        max-width: 570px;
+        font-size: clamp(38px, 5vw, 58px);
+      }
+
+      .contact-copy p:last-child {
+        margin: 15px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .contact-panel .button {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 auto;
+      }
+
+      .footer {
+        display: flex;
+        min-height: 92px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 72px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      .footer-note {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .footer-note span {
+        color: var(--lime);
+      }
+
+      @media (max-width: 850px) {
+        .hero {
+          min-height: auto;
+          grid-template-columns: 1fr 0.78fr;
+          gap: 8px;
+          padding-block: 92px;
+        }
+
+        .hero h1 {
+          font-size: clamp(58px, 9vw, 78px);
+        }
+
+        .hero-art {
+          min-height: 330px;
+        }
+
+        .art-core {
+          width: 160px;
+          height: 160px;
+          font-size: 67px;
+        }
+
+        .float-card-one {
+          right: -5px;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .about-grid {
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 42px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page-wrap {
+          width: min(100% - 40px, 460px);
+        }
+
+        .nav-shell {
+          min-height: 68px;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: calc(100% + 1px);
+          right: 0;
+          left: 0;
+          display: none;
+          align-items: stretch;
+          gap: 0;
+          padding: 8px 20px 16px;
+          border-bottom: 1px solid var(--line);
+          background: #101014;
+        }
+
+        .nav-links.is-open {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .nav-links a {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .nav-links .nav-cta {
+          align-self: flex-start;
+          margin-top: 12px;
+          padding: 11px 16px;
+          border: 1px solid var(--line);
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding-block: 77px 60px;
+        }
+
+        .hero h1 {
+          margin-top: 21px;
+          font-size: clamp(60px, 16vw, 83px);
+        }
+
+        .hero-copy {
+          font-size: 14px;
+        }
+
+        .hero-art {
+          min-height: 290px;
+          margin-top: 12px;
+        }
+
+        .art-orbit {
+          width: 265px;
+        }
+
+        .art-core {
+          width: 145px;
+          height: 145px;
+          font-size: 59px;
+        }
+
+        .float-card-one {
+          top: 9%;
+          right: 1%;
+        }
+
+        .float-card-two {
+          bottom: 7%;
+          left: 1%;
+        }
+
+        .section {
+          padding-block: 74px;
+        }
+
+        .section-heading {
+          align-items: start;
+          flex-direction: column;
+          gap: 15px;
+          margin-bottom: 28px;
+        }
+
+        .section-heading > p {
+          font-size: 13px;
+        }
+
+        .skills-grid {
+          gap: 10px;
+        }
+
+        .skill-card {
+          min-height: 165px;
+          padding: 18px;
+        }
+
+        .skill-icon {
+          margin-bottom: 21px;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 7px;
+        }
+
+        .about-text {
+          padding-top: 10px;
+        }
+
+        .about-facts {
+          gap: 10px;
+        }
+
+        .about-facts strong {
+          font-size: 23px;
+        }
+
+        .about-facts span {
+          font-size: 10px;
+        }
+
+        .approach-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .approach-card {
+          min-height: 180px;
+        }
+
+        .approach-card h3 {
+          margin-top: 35px;
+        }
+
+        .contact-panel {
+          min-height: 300px;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: 23px;
+          padding: 30px 24px;
+        }
+
+        .footer {
+          min-height: 82px;
+          margin-top: 48px;
+          font-size: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="page-wrap mx-auto nav-shell flex items-center justify-between" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Jayesh, home">
+          <span class="brand-mark" aria-hidden="true">J</span>
+          jayesh<span style="color: var(--lime)">.</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#approach">My approach</a>
+          <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero page-wrap mx-auto" id="home">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="750">
+          <p class="eyebrow mono">
+            <span class="status-dot" aria-hidden="true"></span>
+            Software engineer · Open to opportunities
+          </p>
+          <h1>Hi, I’m<br />Jayesh<span>.</span></h1>
+          <p class="hero-copy">
+            I turn thoughtful ideas into clean, responsive web experiences. Early
+            in my software engineering journey, curious by nature, and always
+            building toward better.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#skills">
+              Explore what I do <span class="button-arrow" aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-quiet" href="#about">A little about me</a>
+          </div>
+        </div>
+        <div class="hero-art" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="850" aria-label="Jayesh monogram surrounded by a digital orbit">
+          <div class="art-orbit" aria-hidden="true"></div>
+          <div class="art-core" aria-hidden="true">J.</div>
+          <div class="float-card float-card-one">
+            <span class="float-icon" aria-hidden="true">✳</span>
+            <p>Building with care<small>One detail at a time</small></p>
+          </div>
+          <div class="float-card float-card-two">
+            <span class="float-icon" aria-hidden="true">⌘</span>
+            <p>6 months in<small>And just getting started</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="page-wrap mx-auto">
+          <div class="section-heading" data-aos="fade-up">
+            <div>
+              <p class="section-kicker mono">01 / What I work with</p>
+              <h2>Tools of the trade.</h2>
+            </div>
+            <p>
+              The fundamentals I use to bring a design to life and make it work
+              on every screen.
+            </p>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-card" data-aos="fade-up" data-aos-delay="0">
+              <span class="skill-icon" aria-hidden="true">&lt;/&gt;</span>
+              <h3>HTML</h3>
+              <p>Semantic structure and accessible page foundations.</p>
+            </article>
+            <article class="skill-card" data-aos="fade-up" data-aos-delay="80">
+              <span class="skill-icon" aria-hidden="true">#</span>
+              <h3>CSS</h3>
+              <p>Responsive layouts, considered details, and smooth motion.</p>
+            </article>
+            <article class="skill-card" data-aos="fade-up" data-aos-delay="160">
+              <span class="skill-icon" aria-hidden="true">JS</span>
+              <h3>JavaScript</h3>
+              <p>Interactive experiences with a little more life in them.</p>
+            </article>
+            <article class="skill-card" data-aos="fade-up" data-aos-delay="240">
+              <span class="skill-icon" aria-hidden="true">TW</span>
+              <h3>Tailwind CSS 4</h3>
+              <p>Utility-first styling for quick, consistent interfaces.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="page-wrap mx-auto about-grid">
+          <div class="about-copy" data-aos="fade-right">
+            <p class="section-kicker mono">02 / A little about me</p>
+            <h2>New to the field.<br /><span>All in on learning.</span></h2>
+          </div>
+          <div class="about-text" data-aos="fade-left" data-aos-delay="100">
+            <p>
+              I’m Jayesh, a software engineering professional with six months of
+              experience. I enjoy the process of turning a blank page into a
+              useful, polished website—and learning something new with every
+              build.
+            </p>
+            <p>
+              My current focus is the front end: writing clear HTML, shaping
+              interfaces with CSS, adding interactions with JavaScript, and
+              styling efficiently with Tailwind CSS 4.
+            </p>
+            <div class="about-facts">
+              <div><strong>06</strong><span>months of experience</span></div>
+              <div><strong>04</strong><span>core web tools</span></div>
+              <div><strong>∞</strong><span>things to learn</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="approach">
+        <div class="page-wrap mx-auto">
+          <div class="section-heading" data-aos="fade-up">
+            <div>
+              <p class="section-kicker mono">03 / How I think</p>
+              <h2>Good work, thoughtfully made.</h2>
+            </div>
+            <p>
+              My approach is simple: make it clear, make it work, then make it
+              feel right.
+            </p>
+          </div>
+          <div class="approach-grid">
+            <article class="approach-card" data-aos="fade-up">
+              <span class="approach-number mono">01 — Start with the user</span>
+              <h3>Useful comes first.</h3>
+              <p>Every good interface should feel intuitive, not make you think twice.</p>
+            </article>
+            <article class="approach-card" data-aos="fade-up" data-aos-delay="100">
+              <span class="approach-number mono">02 — Sweat the details</span>
+              <h3>Small things add up.</h3>
+              <p>Careful spacing, readable type, and thoughtful interactions matter.</p>
+            </article>
+            <article class="approach-card" data-aos="fade-up" data-aos-delay="200">
+              <span class="approach-number mono">03 — Keep growing</span>
+              <h3>Curiosity is a skill.</h3>
+              <p>Ask questions, learn by building, and get a little better every day.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-wrap mx-auto" id="contact">
+        <div class="contact-panel" data-aos="fade-up">
+          <div class="contact-copy">
+            <p class="section-kicker mono">04 / Have something in mind?</p>
+            <h2>Let’s make something good.</h2>
+            <p>I’m open to opportunities and conversations. I’d love to hear from you.</p>
+          </div>
+          <a
+            class="button button-primary"
+            href="mailto:?subject=Let%E2%80%99s%20connect%20with%20Jayesh"
+            aria-label="Email Jayesh"
+          >
+            Say hello <span class="button-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-wrap mx-auto footer">
+      <p>© <span id="year"></span> Jayesh. Made with intention.</p>
+      <p class="footer-note">Built for the web <span aria-hidden="true">✳</span></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 650,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 70,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+        navLinks.classList.toggle("is-open", !isOpen);
+      });
+
+      navLinks.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          navLinks.classList.remove("is-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open navigation");
+        }
+      });
+
+      document.querySelector("#year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

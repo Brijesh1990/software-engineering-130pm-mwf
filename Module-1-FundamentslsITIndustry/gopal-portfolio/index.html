@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gopal is a software engineering professional with six months of experience at Tops Technologies Pvt. Ltd. Explore his skills, experience, and interests."
+    />
+    <meta name="theme-color" content="#0a0d14" />
+    <title>Gopal | Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-ink: #0a0d14;
+        --color-panel: #111722;
+        --color-muted: #969eac;
+        --color-lime: #c4f36b;
+        --font-display: "Space Grotesk", sans-serif;
+        --font-body: "DM Sans", sans-serif;
+      }
+    </style>
+
+    <style>
+      :root {
+        color-scheme: dark;
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(ellipse at 84% 10%, rgb(87 110 45 / 13%), transparent 29rem),
+          #0a0d14;
+        color: #f4f5f1;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -1;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.14' filter='url(%23n)'/%3E%3C/svg%3E");
+        content: "";
+        inset: 0;
+        opacity: 0.12;
+      }
+
+      ::selection {
+        background: #c4f36b;
+        color: #0a0d14;
+      }
+
+      .font-display {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .section-shell {
+        width: min(100% - 2.5rem, 1120px);
+        margin-inline: auto;
+      }
+
+      .nav-link {
+        transition: color 180ms ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        color: #c4f36b;
+      }
+
+      .hero-orb {
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .hero-grid {
+        background-image:
+          linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+          linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
+        background-size: 46px 46px;
+        mask-image: linear-gradient(to bottom, black, transparent 86%);
+      }
+
+      .skill-chip {
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .skill-chip:hover {
+        transform: translateY(-3px);
+        border-color: rgb(196 243 107 / 55%);
+        background-color: rgb(196 243 107 / 8%);
+      }
+
+      .menu-open {
+        display: flex !important;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @media (min-width: 640px) {
+        .section-shell {
+          width: min(100% - 4rem, 1120px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-body antialiased">
+    <header class="sticky top-0 z-50 border-b border-white/[0.07] bg-ink/85 backdrop-blur-xl">
+      <nav
+        class="section-shell flex min-h-[76px] items-center justify-between"
+        aria-label="Main navigation"
+      >
+        <a class="font-display text-xl font-bold tracking-tight" href="#home" aria-label="Gopal, home">
+          gopal<span class="text-lime">.</span>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="grid size-11 place-items-center rounded-xl border border-white/10 text-white sm:hidden"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div class="hidden items-center gap-9 text-sm text-muted sm:flex">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a
+            class="rounded-full border border-white/15 px-5 py-2.5 font-semibold text-white transition hover:border-lime hover:text-lime"
+            href="#contact"
+          >Let’s connect <span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden flex-col gap-1 border-t border-white/[0.07] bg-ink px-5 py-4 text-sm text-muted sm:hidden"
+      >
+        <a class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-lime" href="#about">About</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-lime" href="#experience">Experience</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-lime" href="#skills">Skills</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-lime" href="#contact">Let’s connect ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="relative isolate flex min-h-[calc(100svh-76px)] items-center overflow-hidden py-20 sm:py-24">
+        <div class="hero-grid absolute inset-x-0 top-0 -z-10 h-[620px]"></div>
+        <div class="section-shell grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
+          <div data-aos="fade-up" data-aos-duration="800">
+            <div class="mb-8 inline-flex items-center gap-2.5 rounded-full border border-lime/20 bg-lime/[0.07] px-4 py-2 text-xs font-medium tracking-wide text-lime sm:text-sm">
+              <span class="relative flex size-2">
+                <span class="absolute inline-flex size-full animate-ping rounded-full bg-lime opacity-60"></span>
+                <span class="relative inline-flex size-2 rounded-full bg-lime"></span>
+              </span>
+              SOFTWARE ENGINEERING PROFESSIONAL
+            </div>
+
+            <p class="mb-3 text-sm font-medium tracking-[0.18em] text-muted uppercase">Hello, I’m</p>
+            <h1 class="font-display max-w-3xl text-6xl leading-[0.98] font-semibold tracking-[-0.065em] sm:text-7xl lg:text-[94px]">
+              Gopal<span class="text-lime">.</span>
+            </h1>
+            <p class="font-display mt-6 max-w-xl text-2xl leading-snug font-medium tracking-tight text-white/80 sm:text-3xl">
+              Learning by building.<br />
+              <span class="text-muted">Growing with every line of code.</span>
+            </p>
+            <p class="mt-6 max-w-lg text-base leading-7 text-muted sm:text-lg">
+              Early-career software engineering professional with six months of experience at
+              <span class="text-white">Tops Technologies Pvt. Ltd.</span> Curious about the craft
+              and ready for what’s next.
+            </p>
+
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+              <a
+                class="inline-flex min-h-12 items-center gap-3 rounded-full bg-lime px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:bg-[#d3ff82]"
+                href="#experience"
+              >Explore my journey <span class="text-lg" aria-hidden="true">↓</span></a>
+              <a class="px-3 py-3 text-sm font-semibold text-white/75 transition hover:text-lime" href="#skills">
+                What I work with <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-[400px]" data-aos="fade-left" data-aos-delay="180" data-aos-duration="900">
+            <div class="hero-orb absolute -right-5 -top-8 size-28 rounded-full bg-lime/10 blur-2xl sm:-right-8 sm:size-40"></div>
+            <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-panel/90 p-6 shadow-2xl shadow-black/30 sm:p-8">
+              <div class="mb-6 flex items-center justify-between">
+                <div class="flex gap-2" aria-hidden="true">
+                  <span class="size-2.5 rounded-full bg-[#ff766d]"></span>
+                  <span class="size-2.5 rounded-full bg-[#ffd66e]"></span>
+                  <span class="size-2.5 rounded-full bg-lime"></span>
+                </div>
+                <span class="font-mono text-[11px] tracking-widest text-muted">GOPAL / PROFILE</span>
+              </div>
+
+              <div class="relative mb-7 overflow-hidden rounded-2xl border border-white/10 bg-[#f7f7f5]">
+                <img
+                  class="mx-auto block h-56 w-full object-contain object-center sm:h-64"
+                  src="assets/gopal-avatar.png"
+                  alt="Illustrated portrait of Gopal wearing glasses"
+                  fetchpriority="high"
+                />
+                <div class="absolute bottom-3 left-3 rounded-full border border-black/10 bg-white/90 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] text-slate-700 uppercase backdrop-blur">
+                  Personal profile
+                </div>
+              </div>
+
+              <div class="mb-7">
+                <h2 class="font-display text-xl font-semibold">Software Engineer</h2>
+                <p class="mt-1 text-sm text-muted">Curious by nature. Building with purpose.</p>
+              </div>
+
+              <div class="space-y-0">
+                <div class="flex items-center justify-between border-t border-white/[0.08] py-4">
+                  <span class="text-sm text-muted">Experience</span>
+                  <span class="rounded-full bg-lime/[0.09] px-3 py-1 text-sm font-semibold text-lime">6 months</span>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/[0.08] py-4">
+                  <span class="text-sm text-muted">At</span>
+                  <span class="text-right text-sm font-medium">Tops Technologies Pvt. Ltd.</span>
+                </div>
+                <div class="flex items-center justify-between border-y border-white/[0.08] py-4">
+                  <span class="text-sm text-muted">Exploring</span>
+                  <span class="text-sm font-medium">Web &amp; software development</span>
+                </div>
+              </div>
+
+              <div class="mt-7 flex items-center gap-2 text-xs text-muted">
+                <span class="text-lime" aria-hidden="true">✳</span>
+                <span>Open to learning, collaboration &amp; opportunity</span>
+              </div>
+            </div>
+            <div class="absolute -bottom-5 -left-5 -z-10 size-32 rounded-full border border-lime/15 sm:-left-8 sm:size-40"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-shell scroll-mt-24 py-24 sm:py-32">
+        <div class="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+          <div data-aos="fade-up">
+            <p class="mb-4 text-xs font-semibold tracking-[0.2em] text-lime uppercase">A little about me</p>
+            <h2 class="font-display text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
+              Good work starts<br />with <span class="text-muted">curiosity.</span>
+            </h2>
+          </div>
+          <div class="md:pt-8" data-aos="fade-up" data-aos-delay="120">
+            <p class="text-lg leading-8 text-white/75">
+              I’m Gopal, an early-career software engineering professional with six months of
+              experience at Tops Technologies Pvt. Ltd. I enjoy learning how software works—from
+              the structure of a web page to the logic behind a program and the data that supports it.
+            </p>
+            <p class="mt-5 text-base leading-7 text-muted">
+              My current toolkit includes HTML, CSS, Bootstrap, Tailwind CSS 4, C, C++ and SQL.
+              I’m focused on strengthening my fundamentals, building responsive experiences and
+              growing into a thoughtful, dependable engineer.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-2.5">
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm text-white/70">Always learning</span>
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm text-white/70">Detail-minded</span>
+              <span class="rounded-full border border-white/10 px-4 py-2 text-sm text-white/70">Team-oriented</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
+        <div class="section-shell">
+          <div class="mb-14 max-w-2xl" data-aos="fade-up">
+            <p class="mb-4 text-xs font-semibold tracking-[0.2em] text-lime uppercase">Experience</p>
+            <h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Where I’ve been <span class="text-muted">&amp; what’s next.</span></h2>
+            <p class="mt-5 leading-7 text-muted">Every role is a chance to learn, contribute and get a little better.</p>
+          </div>
+
+          <article class="relative grid gap-5 rounded-3xl border border-white/10 bg-panel/70 p-6 sm:grid-cols-[180px_1fr] sm:gap-10 sm:p-9" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <span class="inline-flex rounded-full border border-lime/20 bg-lime/[0.07] px-3 py-1.5 text-xs font-semibold text-lime">6 MONTHS</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl font-semibold">Software Engineering Experience</h3>
+              <p class="mt-2 text-base font-medium text-white/70">Tops Technologies Pvt. Ltd.</p>
+              <p class="mt-5 max-w-2xl leading-7 text-muted">
+                Gained early-career experience in a software engineering environment and developed
+                a foundation for continued growth in programming and web technologies.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-lg bg-white/[0.06] px-3 py-1.5 text-xs text-white/65">Software engineering</span>
+                <span class="rounded-lg bg-white/[0.06] px-3 py-1.5 text-xs text-white/65">Learning &amp; development</span>
+                <span class="rounded-lg bg-white/[0.06] px-3 py-1.5 text-xs text-white/65">Programming fundamentals</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="mt-6 flex items-center gap-4 rounded-2xl border border-dashed border-white/10 px-6 py-5" data-aos="fade-up" data-aos-delay="160">
+            <span class="grid size-10 shrink-0 place-items-center rounded-full border border-lime/20 text-lime" aria-hidden="true">✳</span>
+            <p class="text-sm leading-6 text-muted">Currently growing my skills and looking forward to the next opportunity to contribute and learn.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-shell scroll-mt-24 py-24 sm:py-32">
+        <div class="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
+          <div data-aos="fade-up">
+            <p class="mb-4 text-xs font-semibold tracking-[0.2em] text-lime uppercase">My toolkit</p>
+            <h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">The tools I’m<br />growing with<span class="text-lime">.</span></h2>
+            <p class="mt-5 max-w-sm leading-7 text-muted">
+              A practical foundation across web technologies, programming languages and databases.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2" data-aos="fade-up" data-aos-delay="120">
+            <article class="rounded-2xl border border-white/10 bg-panel/70 p-6">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="grid size-10 place-items-center rounded-xl bg-lime/[0.09] text-lime" aria-hidden="true">01</span>
+                <h3 class="font-display text-lg font-semibold">Web development</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">HTML</span>
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">CSS</span>
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">Bootstrap</span>
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">Tailwind CSS 4</span>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-panel/70 p-6">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="grid size-10 place-items-center rounded-xl bg-lime/[0.09] text-lime" aria-hidden="true">02</span>
+                <h3 class="font-display text-lg font-semibold">Programming</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">C</span>
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">C++</span>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-panel/70 p-6 sm:col-span-2">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="grid size-10 place-items-center rounded-xl bg-lime/[0.09] text-lime" aria-hidden="true">03</span>
+                <h3 class="font-display text-lg font-semibold">Databases</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip rounded-lg border border-white/10 px-3 py-2 text-sm text-white/75">SQL</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-shell scroll-mt-24 pb-24 sm:pb-32">
+        <div class="relative overflow-hidden rounded-[2rem] border border-lime/15 bg-[linear-gradient(120deg,rgba(196,243,107,0.09),rgba(17,23,34,0.85)_55%)] px-7 py-12 text-center sm:px-12 sm:py-16" data-aos="zoom-in">
+          <div class="pointer-events-none absolute -right-20 -top-32 size-72 rounded-full bg-lime/[0.08] blur-3xl"></div>
+          <p class="mb-4 text-xs font-semibold tracking-[0.2em] text-lime uppercase">The next chapter</p>
+          <h2 class="font-display mx-auto max-w-2xl text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
+            Good things happen when we <span class="text-lime">connect.</span>
+          </h2>
+          <p class="mx-auto mt-5 max-w-lg leading-7 text-muted">
+            I’m open to new opportunities, collaborations and conversations about software engineering.
+          </p>
+          <p class="mt-7 text-sm text-white/65">Add your preferred email or professional profile link here to make it easy to reach you.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/[0.07]">
+      <div class="section-shell flex flex-col items-center justify-between gap-3 py-7 text-center text-xs text-muted sm:flex-row sm:text-left">
+        <a class="font-display text-base font-bold tracking-tight text-white" href="#home">gopal<span class="text-lime">.</span></a>
+        <p>Built with curiosity &amp; a little bit of code.</p>
+        <p>© <span id="current-year"></span> Gopal</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      const menuToggle = document.querySelector("#menu-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        menuToggle.setAttribute(
+          "aria-label",
+          isExpanded ? "Open navigation menu" : "Close navigation menu",
+        );
+        mobileMenu.classList.toggle("menu-open", !isExpanded);
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open navigation menu");
+        });
+      });
+
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+
+      AOS.init({
+        duration: 700,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 60,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+    </script>
+  </body>
+</html>
